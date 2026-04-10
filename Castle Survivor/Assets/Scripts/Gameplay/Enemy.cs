@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Ded");
         EnemyManager.Instance.UnregisterEnemy(this);
         Destroy(gameObject);
     }
@@ -45,9 +44,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision Happened");
             Player.Instance.TakeDamage(attack);
             Die();
+        }
+
+        if(collision.gameObject.layer == 6)
+        {
+            TakeDamage(30);
         }
     }
 }

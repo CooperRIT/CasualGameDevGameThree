@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -7,6 +8,12 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
 
     private List<Enemy> enemies = new List<Enemy>();
+
+    [SerializeField] float enemyEXPAmount = 5f;
+
+    [SerializeField] TextMeshProUGUI enemyKilledText;
+
+    int enemyKilledCount = 0;
 
     private void Awake()
     {
@@ -21,13 +28,20 @@ public class EnemyManager : MonoBehaviour
 
     public void RegisterEnemy(Enemy enemy)
     {
-        Debug.Log("Added new enemy");
         enemies.Add(enemy);
     }
 
     public void UnregisterEnemy(Enemy enemy)
     {
         enemies.Remove(enemy);
+        //Send a signal to the EXP manager that u should gain some
+
+
+        EXPAndUpgradesManager.Instance.IncreaseExperience(enemyEXPAmount);
+
+        //Update Enemy Kileld Count
+        enemyKilledCount++;
+        enemyKilledText.text = "Enemies Killed: " + enemyKilledCount;
     }
 
     public GameObject GetClosestEnemy(Vector3 pos)
