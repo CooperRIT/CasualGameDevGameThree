@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4725623862309956322}
   - component: {fileID: 1806565497759974148}
   - component: {fileID: 2324477851164625564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,10 @@ MonoBehaviour:
   speed: 2
   attack: 4
   target: {fileID: 0}
+  knockback: 5
+  touchCooldown: 1
+  touchTimer: 0
+  knockbackDuration: 0.15
 --- !u!50 &1806565497759974148
 Rigidbody2D:
   serializedVersion: 4
