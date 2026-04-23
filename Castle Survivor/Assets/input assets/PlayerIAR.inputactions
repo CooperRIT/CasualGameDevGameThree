@@ -1,0 +1,83 @@
+{
+    "version": 1,
+    "name": "PlayerIAR",
+    "maps": [
+        {
+            "name": "WeaponSelect",
+            "id": "707c9626-c60e-4d4e-ae60-67c5e0f49b27",
+            "actions": [
+                {
+                    "name": "FirstWeapon",
+                    "type": "Button",
+                    "id": "f7fc4228-e49d-4166-8389-d554ee8d6709",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondWeapon",
+                    "type": "Button",
+                    "id": "3314caee-2a93-4eee-ab16-68989819c35f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1b7988e1-8b77-43b6-adef-a6d987129a6f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b9eacb0-a7ec-4183-89c4-96088f8b7dde",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerInput",
+            "id": "88165f91-dd56-4d1e-baeb-2066f2cbb82a",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "a172b646-94e4-444a-a215-71cc9eb0fb5f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad7c4f29-12f8-4f6a-8996-d77e1aa491ae",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
