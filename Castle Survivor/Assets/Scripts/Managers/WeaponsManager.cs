@@ -12,6 +12,7 @@ public abstract class Weapon : MonoBehaviour
     public float WeaponDamage
     {
         get { return weaponDamage; }
+        set { weaponDamage = value; }
     }
 
     public abstract void WeaponAction();
@@ -40,16 +41,16 @@ public class WeaponsManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InputsManager.Instance.inputActions.PlayerInput.Click.performed += OnClickOfMouse;
+
     }
 
     private void OnDisable()
     {
-        InputsManager.Instance.inputActions.PlayerInput.Click.performed -= OnClickOfMouse;
+
     }
 
 
-    void OnClickOfMouse(InputAction.CallbackContext context)
+    public void OnClickOfMouse()
     {
         if (onCoolDown[weaponIndex])
         {

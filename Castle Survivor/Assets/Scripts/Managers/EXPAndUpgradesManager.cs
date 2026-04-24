@@ -64,8 +64,16 @@ public class EXPAndUpgradesManager : MonoBehaviour
             upgradeLevel++;
         }
 
+        UpgradeDamage();
+
         experienceRequirement += 50;
         UpdateUI();
+    }
+
+    public void UpgradeDamage()
+    {
+        WeaponsManager.instance.weapons[0].GetComponent<Weapon>().WeaponDamage += 1;
+        WeaponsManager.instance.weapons[1].GetComponent<Weapon>().WeaponDamage += 10;
     }
 
     void UpdateEXP()
@@ -78,6 +86,11 @@ public class EXPAndUpgradesManager : MonoBehaviour
     {
         WeaponsManager.instance.weapons[0].GetComponent<SpriteRenderer>().sprite = baseImages.arrowUpgradeImage;
         WeaponsManager.instance.weapons[1].GetComponent<SpriteRenderer>().sprite = baseImages.BombUpgradeImage;
+
+        WeaponsManager.instance.weapons[0].GetComponent<Weapon>().WeaponDamage = 5;
+        WeaponsManager.instance.weapons[1].GetComponent<Weapon>().WeaponDamage = 20;
+
+
     }
 
     public void UpdateUI()

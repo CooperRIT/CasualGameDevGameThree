@@ -12,7 +12,7 @@ public class CannonBall : Weapon
 
     private void Start()
     {
-        Destroy(this, 5f);
+        Destroy(gameObject, 3f);
     }
 
     private void Update()
@@ -27,8 +27,13 @@ public class CannonBall : Weapon
 
     private void OnDestroy()
     {
-        GameObject explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Weapon explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity).GetComponent<Weapon>();
 
-        Destroy(explostion, .5f);
+        //This is patchwork at best, but it works for now. 
+        explostion.WeaponDamage = weaponDamage;
+
+        explostion.transform.localScale = Vector3.one * (2.5f + (weaponDamage / 20f));
+
+        Destroy(explostion.gameObject, .2f);
     }
 }

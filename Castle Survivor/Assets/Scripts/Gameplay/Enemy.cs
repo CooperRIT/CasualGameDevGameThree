@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private float health = 5f;
     private float speed = 1f;
-    private float attack = 0.2f;
+    private float attack = 10f;
 
     private Rigidbody2D rb;
     [SerializeField] Transform target;
@@ -87,11 +87,14 @@ public class Enemy : MonoBehaviour
             knockbackTimer = knockbackDuration;
 
             touchTimer = touchCooldown;
+            Die();
         }
 
         if(collision.gameObject.layer == 6)
         {
-            TakeDamage(30);
+            Weapon weapon = collision.gameObject.GetComponent<Weapon>();
+
+            TakeDamage(weapon.WeaponDamage);
         }
     }
 }
